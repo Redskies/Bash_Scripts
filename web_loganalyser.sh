@@ -32,7 +32,7 @@ for file in $@ ; do
 done
 } #Checks for command line arguement to ensure input is a file
 
-argement
+arguement
 rpt=$1 	#File to contain the report
 shift	#Moves arguements over to the left. Removal will break script.
 src=$@	#Source of log files
