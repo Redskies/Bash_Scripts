@@ -1,21 +1,21 @@
 #!/bin/bash
 #########################################################
-# Script:		web_loganalyser.sh						#
-# Author:		Michael Burkowski						#
-# Created:		02/19/2017								#
-# Modified:		02/19/2017								#
-# Purpose:		Analyses a set of 						#
-# message log files from a UNIX/Linux webserver			#
-# system and generates a report.						#
-#														#
+# Script:		web_loganalyser.sh		#
+# Author:		Michael Burkowski		#
+# Created:		02/19/2017			#
+# Modified:		02/19/2017			#
+# Purpose:		Analyses a set of 		#
+# message log files from a UNIX/Linux webserver		#
+# system and generates a report.			#
+#							#
 # Usage: ./loganalyser.sh <report_file>	<Source_files>	#
-# 														#
+# 							#
 # Source file can be as many log files as needed or 	#
-# a group of files such as path/to/files*				#
-#														#
-#														#
-# Exit Codes: 1 if argument not present					#
-#														#
+# a group of files such as path/to/files*		#
+#							#
+#							#
+# Exit Codes: 1 if argument not present			#
+#							#
 #########################################################
 
 
