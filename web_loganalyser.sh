@@ -20,7 +20,7 @@
 
 
 if [[ ! -f $1 ]] || [[ ! -f $2 ]] ; then	#checks for command line arguement
-	printf "Error: File name not supplied.\nUsage: $0 <report_file> <source files>\n"
+	printf "Error: File name not supplied.\nUsage: <report_file> <source files>\n"
 	exit 1
 fi
 
