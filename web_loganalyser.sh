@@ -19,11 +19,20 @@
 #########################################################
 
 
-if [[ ! -f $1 ]] || [[ ! -f $2 ]] ; then	#checks for command line arguement
-	printf "Error: File name not supplied.\nUsage: <report_file> <source files>\n"
+arguement() { 
+if [[ $# -eq 0 ]] ; then
+	printf "Error: File name not supplied.\nUsage: <report_file> <source_file>\n"
 	exit 1
 fi
+for file in $@ ; do
+	if ! [[ -f $file ]] ; then 
+		printf "Error: File name not supplied.\nUsage: <report_file> <source_file>\n"
+		exit 1 
+	fi
+done
+} #Checks for command line arguement to ensure input is a file
 
+argement
 rpt=$1 	#File to contain the report
 shift	#Moves arguements over to the left. Removal will break script.
 src=$@	#Source of log files
