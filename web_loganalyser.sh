@@ -23,7 +23,7 @@
 if [[ $# -eq 0 ]] ; then
 	printf "Error: File name not supplied.\nUsage: <report_file> <source_file>\n"
 	exit 1
-elif ~ [[ -w $1 ]] ; then
+elif ! [[ -w $1 ]] ; then
 	printf "Report file error: permission denied\n" 
 	exit 1
 fi
