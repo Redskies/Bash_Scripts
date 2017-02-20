@@ -18,21 +18,26 @@
 #							#
 #########################################################
 
+#Checks for command line arguement to ensure input is a file
 
-arguement() { 
 if [[ $# -eq 0 ]] ; then
 	printf "Error: File name not supplied.\nUsage: <report_file> <source_file>\n"
+	exit 1
+elif ~ [[ -w $1 ]] ; then
+	printf "Report file error: permission denied\n" 
 	exit 1
 fi
 for file in $@ ; do
 	if ! [[ -f $file ]] ; then 
 		printf "Error: File name not supplied.\nUsage: <report_file> <source_file>\n"
 		exit 1 
+	elif ! [[ -r $file ]] ; then
+		printf "File error: permission denied \n" 
+		exit1
 	fi
 done
-} #Checks for command line arguement to ensure input is a file
 
-arguement
+
 rpt=$1 	#File to contain the report
 shift	#Moves arguements over to the left. Removal will break script.
 src=$@	#Source of log files
