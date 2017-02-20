@@ -48,4 +48,4 @@ activity() {
 
 header_info
 activity
-
+exit 0 
