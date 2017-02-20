@@ -1,17 +1,17 @@
 #!/bin/bash
 #########################################################
-# Script:		loganalyser.sh							#
-# Author:		Michael Burkowski						#
-# Created:		02/19/2017								#
-# Modified:		02/19/2017								#
-# Purpose:		Analyses a set of 						#
-# message log files from a UNIX/Linux					#
-# system and generates a report.						#
-#														#
+# Script:		loganalyser.sh			#
+# Author:		Michael Burkowski		#
+# Created:		02/19/2017			#
+# Modified:		02/19/2017			#
+# Purpose:		Analyses a set of 		#
+# message log files from a UNIX/Linux			#
+# system and generates a report.			#
+#							#
 # Usage: ./loganalyser.sh <report_file>	<Source_file>	#
-#														#
-# Exit Codes: 1 if argument not present					#
-#														#
+#							#
+# Exit Codes: 1 if argument not present			#
+#							#
 #########################################################
 
 if [[ -z $1 ]] || [[ -z $2 ]]; then	#checks for command line arguement
