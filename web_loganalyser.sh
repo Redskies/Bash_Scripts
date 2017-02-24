@@ -20,12 +20,16 @@
 
 #Checks for command line arguement to ensure input is a file
 
-if [[ $# -eq 0 ]] ; then
+if [[ $# -lt 2 ]] ; then
 	printf "Error: File name not supplied.\nUsage: <report_file> <source_file>\n"
 	exit 1
-elif ! [[ -w $1 ]] ; then
-	printf "Report file error: permission denied\n" 
-	exit 1
+elif [[ -f $1 ]] ; then
+	if ![[ -w $1 ]] ; then
+		printf "Report file error: permission denied\n" 
+		exit 1	
+	fi
+else 
+	touch $1
 fi
 for file in $@ ; do
 	if ! [[ -f $file ]] ; then 
