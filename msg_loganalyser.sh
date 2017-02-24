@@ -14,10 +14,29 @@
 #							#
 #########################################################
 
-if [[ -z $1 ]] || [[ -z $2 ]]; then	#checks for command line arguement
-	printf "Error: File name not supplied.\nUsage: $0 <report_file> <source files>\n"
+#Checks for command line arguement to ensure input is a file
+
+if [[ $# -lt 2 ]] ; then
+	printf "Error: File name not supplied.\nUsage: <report_file> <source_file>\n"
 	exit 1
+elif [[ -f $1 ]] ; then
+	if ! [[ -w $1 ]] ; then
+		printf "Report file error: permission denied\n" 
+		exit 1	
+	fi
+else 
+	touch $1
 fi
+for file in $@ ; do
+	if ! [[ -f $file ]] ; then 
+		printf "Error: File name not supplied.\nUsage: <report_file> <source_file>\n"
+		exit 1 
+	elif ! [[ -r $file ]] ; then
+		printf "File error: permission denied \n" 
+		exit1
+	fi
+done
+
 
 rpt=$1 #File to contain the report
 shift
