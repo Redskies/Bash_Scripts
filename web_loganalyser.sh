@@ -24,7 +24,7 @@ if [[ $# -lt 2 ]] ; then
 	printf "Error: File name not supplied.\nUsage: <report_file> <source_file>\n"
 	exit 1
 elif [[ -f $1 ]] ; then
-	if ![[ -w $1 ]] ; then
+	if ! [[ -w $1 ]] ; then
 		printf "Report file error: permission denied\n" 
 		exit 1	
 	fi
